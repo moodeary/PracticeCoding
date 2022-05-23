@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("=".repeat(25));
+        System.out.println(" 주택용 전기요금(저압) 계산기 ");
+        System.out.println("=".repeat(25));
         System.out.println("사용한 전기량을 입력해 주세요");
         Fee a = new Fee();
         a.method1();
@@ -13,44 +16,44 @@ public class Main {
 class Fee {
 
     Scanner sc = new Scanner(System.in);
-    public double feeTotal, feeTotal1, feeTotal2, feeTotal3, feeTotal4, feeTotal5 = 0;
 
     double usingTotal, Total;
 
     int input = sc.nextInt();
 
+    double Fee1 = 100 * 60.7;
+    double Fee2 = Fee1 + 100 * 125.9;
+    double Fee3 = Fee2 + 100 * 187.9;
+    double Fee4 = Fee3 + 100 * 280.6;
+    double Fee5 = Fee4 + 100 * 417.7;
+
+
 
     public void method1() {
-        for (usingTotal = input; usingTotal >= 0; usingTotal -= 100) {
 
-
-            if (usingTotal > 0 && usingTotal <= 100) {
-                feeTotal += (usingTotal) * 60.7;
+        while (input > 0)
+            if (input <= 100) {
+                Total += (input) * 60.7;
                 break;
-            } else if (usingTotal > 100 && usingTotal <= 200) {
-                feeTotal1 += (usingTotal - 100) * 125.9;
-            } else if (usingTotal > 200 && usingTotal <= 300) {
-                feeTotal2 += (usingTotal - 200) * 187.9;
-            } else if (usingTotal > 300 && usingTotal <= 400) {
-                feeTotal3 += (usingTotal - 300) * 280.6;
-            } else if (usingTotal > 400 && usingTotal <= 500) {
-                feeTotal4 += (usingTotal - 400) * 417.7;
+            } else if (usingTotal <= 200) {
+                Total += Fee1 + (input - 100) * 125.9;
+                break;
+            } else if (usingTotal <= 300) {
+                Total += Fee2 + (input - 200) * 187.9;
+                break;
+            } else if (usingTotal <= 400) {
+                Total += Fee3 + (input - 300) * 280.6;
+                break;
+            } else if (usingTotal <= 500) {
+                Total += Fee4 + (input - 400) * 417.7;
+                break;
             } else if (usingTotal > 500) {
-                feeTotal5 += (usingTotal - 500) * 670.6;
-                usingTotal -= (usingTotal - 600) + 1;
-
+                Total += Fee5 + (input - 500) * 670.6;
+                break;
             }
-        }
-        Total = (feeTotal + feeTotal1 + feeTotal2 + feeTotal3 + feeTotal4 + feeTotal5);
 
-        System.out.println(
-                " 0 ~ 100 구간의 전기요금은 = " + feeTotal + "\n" +
-                        " 100 ~ 200 구간의 전기요금은 = " + feeTotal1 + "\n" +
-                        " 200 ~ 300 구간의 전기요금은 = " + feeTotal2 + "\n" +
-                        " 300 ~ 400 구간의 전기요금은 = " + feeTotal3 + "\n" +
-                        " 400 ~ 500 구간의 전기요금은 = " + feeTotal4 + "\n" +
-                        " 500 ~  구간의 전기요금은 = " + feeTotal5 + "\n" +
-                        "총 Total 요금은 = " + Total + "입니다.");
-
+        System.out.println("총 Total 요금은 = " + Total + "입니다.");
     }
 }
+
+
