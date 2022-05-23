@@ -21,7 +21,7 @@ class Fee {
 
 
     public void method1() {
-        for (usingTotal = input; usingTotal >= 0; usingTotal -= 100) {
+        for (usingTotal = input; usingTotal > 0; usingTotal -= 100) {
 
 
             if (usingTotal > 0 && usingTotal < 100) {
@@ -50,7 +50,7 @@ class Fee {
                         " 200 ~ 300 구간의 전기요금은 = " + feeTotal2 + "\n" +
                         " 300 ~ 400 구간의 전기요금은 = " + feeTotal3 + "\n" +
                         " 400 ~ 500 구간의 전기요금은 = " + feeTotal4 + "\n" +
-                        " 500 ~ 600 구간의 전기요금은 = " + feeTotal5 + "\n" +
+                        " 500 ~  구간의 전기요금은 = " + feeTotal5 + "\n" +
                         "총 Total 요금은 = " + Total + "입니다.");
 
 
