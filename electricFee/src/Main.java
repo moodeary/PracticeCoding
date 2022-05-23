@@ -21,7 +21,7 @@ class Fee {
 
 
     public void method1() {
-        for (usingTotal = input; usingTotal > 0; usingTotal -= 100) {
+        for (usingTotal = input; usingTotal <= 0; usingTotal -= 100) {
 
 
             if (usingTotal > 0 && usingTotal < 100) {
