@@ -21,24 +21,23 @@ class Fee {
 
 
     public void method1() {
-        for (usingTotal = input; usingTotal <= 0; usingTotal -= 100) {
+        for (usingTotal = input; usingTotal >= 0; usingTotal -= 100) {
 
 
-            if (usingTotal > 0 && usingTotal < 100) {
-                feeTotal += (usingTotal + 1) * 60.7;
+            if (usingTotal > 0 && usingTotal <= 100) {
+                feeTotal += (usingTotal) * 60.7;
                 break;
-            } else if (usingTotal > 100 && usingTotal < 200) {
-                feeTotal1 += ((usingTotal - 100) + 1) * 125.9;
-            } else if (usingTotal > 200 && usingTotal < 300) {
-                feeTotal2 += ((usingTotal - 200) + 1) * 187.9;
-            } else if (usingTotal >= 300 && usingTotal < 400) {
-                feeTotal3 += ((usingTotal - 300) + 1) * 280.6;
-            } else if (usingTotal >= 400 && usingTotal < 500) {
-                feeTotal4 += ((usingTotal - 400) + 1) * 417.7;
-            } else if (usingTotal >= 500) {
+            } else if (usingTotal > 100 && usingTotal <= 200) {
+                feeTotal1 += (usingTotal - 100) * 125.9;
+            } else if (usingTotal > 200 && usingTotal <= 300) {
+                feeTotal2 += (usingTotal - 200) * 187.9;
+            } else if (usingTotal > 300 && usingTotal <= 400) {
+                feeTotal3 += (usingTotal - 300) * 280.6;
+            } else if (usingTotal > 400 && usingTotal <= 500) {
+                feeTotal4 += (usingTotal - 400) * 417.7;
+            } else if (usingTotal > 500) {
                 feeTotal5 += (usingTotal - 500) * 670.6;
                 usingTotal -= (usingTotal - 600) + 1;
-
 
             }
         }
@@ -52,7 +51,6 @@ class Fee {
                         " 400 ~ 500 구간의 전기요금은 = " + feeTotal4 + "\n" +
                         " 500 ~  구간의 전기요금은 = " + feeTotal5 + "\n" +
                         "총 Total 요금은 = " + Total + "입니다.");
-
 
     }
 }
